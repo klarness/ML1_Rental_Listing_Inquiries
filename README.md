@@ -81,4 +81,4 @@ Introductory ML project based on a [Kaggle competition](https://www.kaggle.com/c
 | Naive (mean) | 1140.45 | 1134.13 | 1598.46 | 1594.37 |
 | Naive (median) | 1087.46 | 1081.22 | 1645.46 | 1639.34 |
 
-**Best model: Decision Tree** — lowest MAE and RMSE on the test set. Linear Regression shows signs of overfitting (test RMSE is notably higher than train), while Decision Tree generalizes better with this feature set.
+**Best model: Decision Tree** lowest MAE and RMSE on the test set. Linear Regression shows signs of overfitting (test RMSE is notably higher than train), while Decision Tree generalizes better with this feature set.
