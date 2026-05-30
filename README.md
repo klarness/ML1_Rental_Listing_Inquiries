@@ -59,3 +59,26 @@ Introductory ML project based on a [Kaggle competition](https://www.kaggle.com/c
    4. Naive models — mean and median baselines, compute MAE & RMSE
    5. Compare all models; identify the best one
    6. *(Optional)* Use the full dataset with all features
+
+## Results
+
+**Dataset:** 49,352 listings, 15 columns. After removing extreme outliers (1–99 percentile on price): 48,379 samples, price range $1,475–$13,000.
+
+**Key findings from EDA:**
+- `bathrooms` has the strongest positive correlation with price (~0.67), followed by `bedrooms` (~0.55)
+- `interest_level` is negatively correlated with price — more expensive listings attract less interest
+- Price distribution is right-skewed (log-normal shape) typical for rental markets
+- Most listings have 1 bathroom and 1–2 bedrooms
+
+**Feature engineering:** `PolynomialFeatures(degree=10)` on `bathrooms` + `bedrooms` expanded the feature space from 2 to 66 features. Squared features alone did not meaningfully improve correlation with price.
+
+**Model comparison** (features: `bathrooms`, `bedrooms` with polynomial expansion):
+
+| Model | MAE train | MAE test | RMSE train | RMSE test |
+|---|---|---|---|---|
+| Linear Regression | 756.73 | 759.83 | 1079.07 | 1247.30 |
+| **Decision Tree** | **756.70** | **753.99** | **1078.97** | **1073.88** |
+| Naive (mean) | 1140.45 | 1134.13 | 1598.46 | 1594.37 |
+| Naive (median) | 1087.46 | 1081.22 | 1645.46 | 1639.34 |
+
+**Best model: Decision Tree** — lowest MAE and RMSE on the test set. Linear Regression shows signs of overfitting (test RMSE is notably higher than train), while Decision Tree generalizes better with this feature set.
