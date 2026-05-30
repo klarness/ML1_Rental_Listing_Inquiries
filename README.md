@@ -1,5 +1,7 @@
 # Machine learning introduction
 
+[![Open in nbviewer](https://img.shields.io/badge/Open%20notebook-nbviewer-orange)](https://nbviewer.org/github/klarness/ML1_Rental_Listing_Inquiries/blob/main/src/ml_intro.ipynb)
+
 Summary: This project is an introduction to machine learning and especially to primary data analysis with some practical basics.
 
 💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
